@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <!-- Vue tag to add header component -->
-    <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
-    <!-- Slices block component -->
-    <slices-block :slices="slices" />
+  <div class="homepage">
+    <header-prismic :menuLinks="menuLinks" :altLangs="altLangs" :loginLinks="loginLinks"/>
+
+    <slices-block :slices="slices" data-scroll-section/>
+    <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
+    :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 
+    :copyright="copyright" :footerCtas="footerCtas" :designer="designer" :rotxt="rotxt"/>
   </div>
 </template>
 
@@ -11,17 +13,31 @@
 // Imports for all components
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
+import FooterPrismic from "~/components/FooterPrismic.vue";
 
 export default {
   name: "Home",
   components: {
     HeaderPrismic,
-    SlicesBlock
+    SlicesBlock,
+    FooterPrismic
   },
+
+  transition: "intro",
   head() {
     return {
-      title: "Prismic Nuxt.js Multi Page Website"
+      title: "Kuppa Dropshipping App"
     };
+  },
+   beforeMount () {
+    const browserLang = (window.navigator ? (window.navigator.language 
+            || window.navigator.systemLanguage 
+            || window.navigator.userLanguage) : "en").toLowerCase().substr(0, 2)
+
+    if (browserLang == 'ro' && window.location.pathname == '/' 
+          && document.referrer.indexOf(window.location.origin) < 0) {
+      window.location.pathname = '/ro'
+    }
   },
   async asyncData({ $prismic, params, error }) {
     try {
@@ -40,6 +56,7 @@ export default {
       const result = await $prismic.api.getSingle('homepage', lang)
 
       const menuContent = (await $prismic.api.getSingle('top_menu', lang )).data
+      const footerContent = (await $prismic.api.getSingle('footer', lang )).data
 
       return {
         // Page content, set slices as variable
@@ -47,11 +64,24 @@ export default {
 
         // Menu
         menuLinks: menuContent.menu_links,
+        loginLinks: menuContent.login_links,
+        companyLinks: footerContent.company_links,
+        footerCtas: footerContent.footer_ctas,
+        resourceLinks: footerContent.resource_links,
+        usefulLinks: footerContent.useful_links,
+        headline: footerContent.headline,
+        headline2: footerContent.headline2,
+        headline3: footerContent.headline3,
+        description: footerContent.description,
+        socialLinks: footerContent.social_links,
+        copyright: footerContent.copyright,
+        designer: footerContent.designer,
+        rotxt: footerContent.rotxt,
         altLangs: result.alternate_languages
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });
     }
-  }
+  },
 };
 </script>

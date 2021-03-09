@@ -3,6 +3,11 @@ const pkg = require("./package");
 export default {
   mode: "universal",
   target: "static",
+  loadingIndicator: {
+    name: 'circle',
+    color: '#03002f',
+    background: 'white'
+  },
   /*
    ** Headers of the page
    */
@@ -18,13 +23,13 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic",
+          "https://use.typekit.net/uzx2elw.css",
       },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic",
-      },
+      // {
+      //   rel: "stylesheet",
+      //   href:
+      //     "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic",
+      // },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/icon?family=Material+Icons",
@@ -35,30 +40,85 @@ export default {
           "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css",
       },
     ],
+    // script: [
+    //   {
+    //     src: "@/assets/js/custom.js",
+    //   },
+    // ],
   },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#03002f", throttle: 0, height: '5px'},
 
   /*
    ** Global CSS
    */
-  css: ["@/assets/css/resetr.css", "@/assets/css/common.css"],
-
+  css: [
+    "@/assets/css/resetr.css", 
+    "@/assets/css/common.css",    
+  ],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxt-buefy',
+    "nuxt-lazyimage",
+    "@bazzite/nuxt-optimized-images"
+  ],
+  styleResources: {scss: ["@/assets/scss/main.scss"]},
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/prismicLinks", ssr: false }],
-  /*
+  plugins: [
+    // {src: "~/plugins/custom.js",  mode: 'client', ssr: false},
+    {src: "~/plugins/locomotive.js", mode: "client", ssr: false },
+    // {src: "~/plugins/gsap.js", mode: "client", ssr: false },
+    // { src: '~/plugins/client.js', mode: 'client', ssr: false},
+    // { src: '~/plugins/both.js' },
+    // { src: '~/plugins/server.js', mode: 'server' },
+    { src: "~/plugins/prismicLinks", ssr: false },
+    {src: "~/plugins/buefy.js", body: true, ssr: false},    
+    {src: '~/plugins/imagesLoaded.js', ssr: false },
+    '~plugins/buefy.js',
+    // {src: "~/plugins/custom.js",  mode: 'client', ssr: false},
+
+  ],
+    /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/prismic"],
-
+  modules: ["@nuxtjs/prismic", 'nuxt-gsap-module',
+   ['nuxt-i18n', {
+    // ...
+    detectBrowserLanguage: {
+      useCookie: false,
+      cookieKey: 'i18n_redirected',
+      // onlyOnRoot: true,  // recommended
+    }
+  }]
+  ],
+  buildModules: [
+    'nuxt-gsap-module',
+    '@aceforth/nuxt-optimized-images',
+    ['nuxt-i18n', {
+      // ...
+      detectBrowserLanguage: {
+        useCookie: false,
+        cookieKey: 'i18n_redirected',
+        onlyOnRoot: true,  // recommended
+      }
+    }]
+  ],
+  i18n: {
+    // locales: ['en-gb', 'ro'],
+    // defaultLocale: 'en-gb',
+  },
+  optimizedImages: {
+    optimizeImages: true
+  },
   prismic: {
-    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
+    endpoint: "https://kuppaweb.cdn.prismic.io/api/v2",
     disableGenerator: false,
+    preview: false
   },
 
   /*
@@ -71,6 +131,17 @@ export default {
     extend(config, ctx) {
       // to transform link with <nuxt-link> for the htmlSerializer
       config.resolve.alias["vue"] = "vue/dist/vue.common";
+    },
+    transpile: [
+      'nuxt-gsap-module',
+      'gsap'
+    ],
+  },
+
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true
     },
   },
 

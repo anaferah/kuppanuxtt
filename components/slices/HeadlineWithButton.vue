@@ -1,12 +1,16 @@
 <template>
   <section class="headline-with-button">
-    <div>
-      <prismic-rich-text :field="slice.primary.headline" />
-      <prismic-rich-text :field="slice.primary.description" />
-    </div>
-    <div class="button">
-      <prismic-image :field="slice.primary.button" />
-    </div>
+    <div class="container">
+      <div class="columns">
+         <div class="column is-8">
+          <prismic-rich-text :field="slice.primary.headline" />
+          <prismic-rich-text :field="slice.primary.description" />
+        </div>
+        <div class="column button">
+          <prismic-image :field="slice.primary.button" />
+        </div>
+      </div>
+    </div>   
   </section>
 </template>
 
@@ -17,49 +21,48 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-.headline-with-button
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  align-items: center
-  text-align: center
+<style lang="scss">
+@import '../../node_modules/bulma/css/bulma.css';
+@import '@/assets/scss/main.scss';
 
-.headline-with-button /deep/ h1
-  line-height: 4rem
-  font-size: 43px
+.headline-with-button {
+  padding:0 8%;
+  .container {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:100vh;
+    .columns {
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 5.5vw;
+      line-height: 1.1; 
+      color:$darkblue;
+      &::first-letter {
+        color:$darkgreen;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 40px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      // max-width: 80%;
+    }
+    .button {
+      // display: flex;
+      // align-self: flex-end;
+      // justify-content: flex-end;
+      background:transparent;
+      border:none;
+    }
+  }
+  
+  
+}
 
-.headline-with-button /deep/ p
-  max-width: 691px
-  margin-top: 20px
-  line-height: 40px
-  font-size: 23px
-  font-weight: 500
-
-.headline-with-button /deep/ .button
-  display: flex
-  align-self: center
-  padding-top: 20px
-
-@media (min-width: 1100px)
-  .headline-with-button
-    display: flex
-    flex-direction: row
-    padding-top: 40px
-    text-align: inherit
-
-  .headline-with-button /deep/ h1
-    max-width: 645px
-    line-height: inherit
-    font-size: 100px
-    letter-spacing: 0
-    font-weight: 600
-
-  .headline-with-button /deep/ p
-    max-width: 617px
-
-  .headline-with-button /deep/ .button
-    display: flex
-    align-self: flex-end
-    justify-content: flex-end
 </style>

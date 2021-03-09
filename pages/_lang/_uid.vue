@@ -3,22 +3,30 @@
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
     <!-- Slices block component -->
     <slices-block :slices="slices" />
+    <cta-footer />
+    <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
+    :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 
+    :copyright="copyright"/>
   </div>
 </template>
 
 <script>
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
+import CtaFooter from "~/components/CtaFooter.vue";
+import FooterPrismic from "~/components/FooterPrismic.vue";
 
 export default {
   name: "page",
   components: {
     HeaderPrismic,
-    SlicesBlock
+    SlicesBlock,
+    CtaFooter,
+    FooterPrismic
   },
   head() {
     return {
-      title: "Prismic Nuxt.js Multi Page Website"
+      title: "Kuppa Dropshipping App"
     };
   },
   async asyncData({ $prismic, params, error }) {
@@ -38,6 +46,7 @@ export default {
       const result = await $prismic.api.getByUID('page', params.uid, lang)
 
       const menuContent = (await $prismic.api.getSingle('top_menu', lang )).data
+      const footerContent = (await $prismic.api.getSingle('footer', lang )).data
 
       return {
         // Page content, set slices as variable
@@ -45,6 +54,15 @@ export default {
 
         // Menu
         menuLinks: menuContent.menu_links,
+        companyLinks: footerContent.company_links,
+        resourceLinks: footerContent.resource_links,
+        usefulLinks: footerContent.useful_links,
+        headline: footerContent.headline,
+        headline2: footerContent.headline2,
+        headline3: footerContent.headline3,
+        description: footerContent.description,
+        socialLinks: footerContent.social_links,
+        copyright: footerContent.copyright,
         altLangs: result.alternate_languages
       };
     } catch (e) {

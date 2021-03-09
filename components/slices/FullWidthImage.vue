@@ -3,9 +3,9 @@
     <div class="main-img">
       <prismic-image :field="slice.primary.image" />
     </div>
-    <div class="background" :class="slice.primary.background_image_position">
+    <!-- <div class="background" :class="slice.primary.background_image_position">
       <img src="./../../images/full-width-image-background.png" />
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -43,7 +43,7 @@ export default {
   .full-width-image
     position: relative
     margin-top: 50px
-    padding-top: 110px
+    padding-top: 10px
 
   .full-width-image .background
     display: flex
