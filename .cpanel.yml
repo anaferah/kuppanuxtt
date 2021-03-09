@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/moaryart/public_html/kuppa.ro
-    - /bin/cp -R * $DEPLOYPATH
+    - export DEPLOYPATH=/home2/moaryart/public_html/kuppa.ro
+    - /bin/cp dist * $DEPLOYPATH
