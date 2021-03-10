@@ -22,9 +22,6 @@
                 :alt="slice.primary.image.alt"
               />
           </div>
-          <div>
-              <prismic-embed :field="slice.primary.video" class="image is-16by9"/>
-          </div>
         </div>
       </div>
     </div>
@@ -43,8 +40,6 @@ export default {
 @import '@/assets/scss/colors.scss';
 
 .textimg-right {
-    // min-height:100vh;
-    // padding:10rem 0;
     @media (max-width: 768px) {
       margin: 5rem auto;
     }
@@ -53,6 +48,9 @@ export default {
             align-items: center;
             justify-content: center;
             min-height:100vh;
+            @media (max-width: 768px) {
+              min-height: 100%;
+            }
             .revealr, .reveal {
               visibility: hidden;
               position: relative;
@@ -75,7 +73,7 @@ export default {
                 color: $darkgrey;
                 line-height: 1.2;
                 @media (max-width: 768px) {
-                  font-size:2.5rem;
+                  font-size:2rem;
                   text-align: center;
                 }
                 

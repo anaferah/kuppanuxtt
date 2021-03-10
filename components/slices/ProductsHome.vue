@@ -63,7 +63,7 @@ export default {
                 font-weight: 900;
                 line-height: 1.2;
                 @media (max-width: 768px) {
-                    font-size:2.5rem;
+                    font-size:2rem;
                     margin-bottom: 1rem;
                 }
             }
@@ -83,6 +83,9 @@ export default {
                 align-items: center;
                 justify-content: center;
                 margin-bottom:1rem;
+                @media (max-width: 768px) {
+                    margin-bottom:0.2rem;
+                }
                 .number-wrapper {
                     h5 {
                         color: #d9d0be;  
@@ -100,7 +103,7 @@ export default {
                         padding-left:0.5rem;
                         @media (max-width: 768px) {
                             padding-left:0;
-                            font-size:1.1rem;
+                            font-size:0.95rem;
                             font-weight: 700;
                         }
                         a {

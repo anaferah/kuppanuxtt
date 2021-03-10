@@ -337,6 +337,9 @@ export default {
         .accordion__title {
           font-size: 1.4rem;
           font-weight: 600;
+          @media (max-width: 768px) {
+            font-size:1.2rem;
+          }
         }
         .accordion__icon {
           cursor: pointer;
@@ -363,6 +366,9 @@ export default {
           font-size: 1.2rem;
           line-height: 1.4;
           margin-bottom: 1em;
+          @media (max-width: 768px) {
+            font-size:1rem;
+          } 
           // opacity: 1;
         }
       }

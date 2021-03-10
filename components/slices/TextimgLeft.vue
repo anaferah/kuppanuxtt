@@ -99,7 +99,10 @@ export default {
 }  
 .about {
   .textimg-left {
-    margin:0 0 10rem;
+    margin:3rem 0 10rem;
+     @media (max-width: 1340px) {
+       margin-top:1rem;
+     }
   }
 }
 

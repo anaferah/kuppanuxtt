@@ -77,6 +77,16 @@ export default {
     .three-cols {
         .container {
             .columns {
+                 .column {
+                     @media (max-width: 780px) {
+                        margin-bottom:2rem;
+                    }
+                 }
+                p {
+                     @media (max-width: 780px) {
+                         margin-bottom:1rem;
+                     }
+                }
                 a {
                     &.button--hyperion {
                         background:$darkgrey;

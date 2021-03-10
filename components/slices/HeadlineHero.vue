@@ -82,12 +82,16 @@ export default {
     font-weight: 900;
     line-height: 1.1;
     @media (max-width: 768px) {
-      font-size:3rem;
-      line-height:1.4
+      font-size:2.5rem;
+      line-height:1.1em;
+      margin-bottom:0.5rem;
     }
   }
   p {
     font-size:1.2rem;
+    @media (max-width: 768px) {
+      font-size:1rem;
+    }
   }
   svg {
     fill:$darkgrey;

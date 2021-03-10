@@ -35,6 +35,9 @@ export default {
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 7rem;
+            @media (max-width: 768px) {
+                font-size:2rem;
+            }
         }
         ul {
             display: flex;
@@ -87,6 +90,9 @@ export default {
                 p {
                     font-size:1.5rem;
                     font-weight:600;
+                    @media (max-width: 768px) {
+                        font-size:1.2rem;
+                    }
                 }
                 &:hover {
                     cursor: pointer;

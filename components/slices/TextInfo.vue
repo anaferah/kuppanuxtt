@@ -37,6 +37,12 @@ export default {
           color:$darkgrey;
           @media (max-width: 768px) {
             font-size:2.5rem;
+            text-align: center;
+          }
+        }
+        p {
+          @media (max-width: 768px) {
+            text-align: center;
           }
         }
       }

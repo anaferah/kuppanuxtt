@@ -248,6 +248,9 @@ export default {
             }
             p {
                 font-size:1.2rem;
+                @media (max-width: 768px) {
+                    font-size:1rem;
+                }
                 strong {
                     color:$darkgreen;
                     font-weight: 900;

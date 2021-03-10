@@ -61,7 +61,7 @@ export default {
             font-weight: 900;
             color:$darkgreen;
             @media (max-width: 768px) {
-                font-size:2.5rem;
+                font-size:2rem;
             }
             strong {
                 font-weight:900;

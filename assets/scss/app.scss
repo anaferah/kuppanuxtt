@@ -1,27 +1,26 @@
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Muli', sans-serif !important;
 }
 strong {
     color:$darkgrey;
 }
 
 a {
-  color: black;
-  text-decoration: underline;
-  &.buttons {
+   &.buttons {
     pointer-events: auto;
     cursor: pointer;
     background: transparent;                
-    margin: 0 !important;
+    margin: 0;
     position: relative;
     display: inline-block;
     color: white;
     letter-spacing: 0.2px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: 700;
     padding: 1rem 2rem;
     line-height: normal;
+    font-family: "Segoe UI";
     &:before, &:after {
       position: absolute;
       top: 0;
@@ -36,13 +35,7 @@ a {
     border-radius:3rem;
     color:white;
     span {
-      // display: block;
       position: relative;
-      // span {
-      //   overflow:hidden;
-      //   line-height: normal;
-      //   vertical-align: middle;
-      // }
     }
     & > span {
       overflow: hidden;
@@ -88,15 +81,6 @@ $t-delay: 300ms;
     left:0;
     background-color:#d4b77d;
   }
-
-  // &::before {
-  //   top:50%;
-  //   background-color: #00a98e;
-  // }
-
-  // &::after {
-  //   background-color:#d4b77d;
-  // }
 }
 
 .intro-leave {
@@ -154,5 +138,12 @@ $t-delay: 300ms;
 .container {
   @media (max-width: 768px) { 
     padding: 0 2rem;
+  }
+}
+
+.privacy, .terms {
+  a {
+    color:black;
+    text-decoration: underline;
   }
 }

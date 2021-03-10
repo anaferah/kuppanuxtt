@@ -145,6 +145,7 @@ body { height: 100%; }
           letter-spacing: 0.5px;
           font-size:1.2rem;
           text-decoration: none;
+          font-family: "Segoe UI";
           // @media (max-width: 768px) {
           //   padding-bottom: 15px;
           // }

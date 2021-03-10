@@ -122,7 +122,9 @@ h6 {
 p {
   line-height: 1.5;
   font-size: 1.1rem;
+  
 }
+
 
 pre {
   white-space: pre-wrap; /* css-3 */
@@ -170,5 +172,12 @@ em {
     font-size: 48px;
     font-weight: 600;
   }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size:1rem;
+  }
+
 }
 

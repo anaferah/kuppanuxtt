@@ -88,7 +88,10 @@ export default {
         justify-content: center;
         text-align: center;
         p {
-            font-size:1.1rem
+            font-size:1.1rem;
+            @media (max-width: 768px) {
+                font-size:1rem;
+            }
         }
         .accordion-container {
             margin-top:3rem;
@@ -138,6 +141,9 @@ export default {
                 h4 {
                     font-size: 1.4rem;
                     font-weight: 700;
+                    @media (max-width: 768px) {
+                        font-size:1.2rem;
+                    }
                 }
                 p {
                     font-size: 1.5rem;
@@ -170,6 +176,9 @@ export default {
                         line-height: 1.5;
                         margin-bottom: 1em;
                         color:$darkgrey;
+                        @media (max-width: 768px) {
+                            font-size:1rem;
+                        }
                     }
                 }
             }

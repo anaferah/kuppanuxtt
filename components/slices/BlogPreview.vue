@@ -34,6 +34,9 @@ export default {
                 font-weight: 700;
                 margin-top:1rem;
                 color:$darkgrey;
+                @media (max-width: 768px) {
+                   font-size:1.2rem;
+                }
             }
             .column {
                 @media (max-width: 768px) {

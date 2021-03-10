@@ -1,8 +1,7 @@
 <template>
   <div class="homepage">
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs" :loginLinks="loginLinks"/>
-
-    <slices-block :slices="slices" data-scroll-section/>
+    <slices-block :slices="slices"/>
     <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
     :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 
     :copyright="copyright" :footerCtas="footerCtas" :designer="designer" :rotxt="rotxt"/>

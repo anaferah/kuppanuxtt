@@ -84,12 +84,12 @@ export default {
   display:flex;
   z-index: 99;
   .container {
-    @media (max-width: 768px) { 
+    @media (max-width: 1340px) { 
       padding:0
     }
   }
   .columns {
-     @media (max-width: 768px) { 
+     @media (max-width: 1340px) { 
        display:flex;
        align-items: center;
        justify-content: space-between;
@@ -98,23 +98,23 @@ export default {
   .navigation,  .loginregister{
     ul {
       li {
-        // display: inline;
-        // padding: 0 10px;
         a {
           color: $darkgrey;
           -webkit-transition: 0.5s;
           transition: 0.5s;
-          font-weight: 600;
+          font-weight: 700;
           text-decoration: none;
+          font-size:1.2rem;          
           &:hover {
             color:$darkgreen;
           }
           &.buttons {
-            font-size:0.8rem;
-            padding: 10px 20px;
-            font-weight: 700;
+            font-size:1.2rem;
+            padding: 10px 1.5rem;
+            font-weight: 800;
             letter-spacing: 0.2px;
-            margin-bottom:-15px;
+            // margin-bottom:-15px;
+            line-height: 1;
             &.button--hyperion {
               color:white;
             }
@@ -127,12 +127,17 @@ export default {
       display:flex;
       align-items: center;
       justify-content: flex-end;
+      @media (max-width: 1340px) {
+        display:block;
+        margin-bottom:2rem;
+        margin-top:2rem;
+      }
       li {  
         &:first-child {
             .lga {
               cursor: pointer;
               background: transparent;                
-              margin: 0;
+              margin: 0 !important;
               position: relative;
               display: inline-block;
               color: white;
@@ -140,11 +145,17 @@ export default {
               font-size: 1rem;
               text-transform: uppercase;
               font-weight: 700;
-              padding:10px 1.5rem;
+              padding:0.7rem 1.5rem;
               overflow: hidden;
               border:1px solid $darkgrey;
               border-radius:3rem;
-              color:$darkgrey;            
+              color:$darkgrey;      
+              line-height: 1;   
+              font-family: "Segoe UI";
+               @media (max-width: 1340px) {
+                 width:100%;
+                 text-align: center;
+               }
             }
           &:hover {
             .lga {
@@ -160,15 +171,17 @@ export default {
             position: relative;
             display: inline-block;
             color: white;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.4px;
             font-size: 1rem;
             text-transform: uppercase;
-            font-weight: 700;
-            padding: 10px 1.5rem;
+            font-weight: 800;
+            padding: 0.7rem 1.5rem;
             overflow: hidden;
             border:1px solid $darkgreen;
             border-radius:3rem;
             color:white;
+            font-family: "Segoe UI";
+            line-height: 1; 
             &:before, &:after {
               position: absolute;
               top: 0;
@@ -179,6 +192,7 @@ export default {
             span {
               // display: block;
               position: relative;
+              font-family: 'Muli', sans-serif;
             }
             & > span {
               overflow: hidden;
@@ -235,7 +249,7 @@ export default {
 }
 
 .navbars-burger {
-  @media (max-width: 768px) {     
+  @media (max-width: 1340px) {     
     display:block;
     background:transparent;
     border:0;
@@ -243,7 +257,7 @@ export default {
     height:auto;
   }
   span {
-    @media (max-width: 768px) {     
+    @media (max-width: 1340px) {     
       color:$darkgrey;
       height:2px;
       width:40px;
@@ -258,17 +272,17 @@ export default {
       z-index: 9999;
     }
     &:nth-child(1) {
-      @media (max-width: 768px) {
+      @media (max-width: 1340px) {
         top: calc(50% - 10px);
       }
     }
     &:nth-child(2) {
-      @media (max-width: 768px) {
+      @media (max-width: 1340px) {
         top: calc(50% - 3px)
       }
     }
     &:nth-child(3) {
-      @media (max-width: 768px) {
+      @media (max-width: 1340px) {
         top: calc(50% + 4px);
       }
     }
@@ -277,19 +291,19 @@ export default {
     span {
       color:black;
       &:nth-child(1) {
-        @media (max-width: 768px) {
+        @media (max-width: 1340px) {
           top: calc(50% - 6px);
           transform: translateY(5px) rotate(45deg);
         }
       }
       &:nth-child(2) {
-        @media (max-width: 768px) {
+        @media (max-width: 1340px) {
           top: calc(50% - 1px);
           opacity: 0;
         }
       }
       &:nth-child(3) {
-        @media (max-width: 768px) {
+        @media (max-width: 1340px) {
           top: calc(50% + 4px);
           transform: translateY(-5px) rotate(-45deg);
         }
@@ -302,7 +316,7 @@ export default {
   display:flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 768px) {      
+  @media (max-width: 1340px) {      
     overflow: hidden;
     z-index: 101;
     height: 100vh;
@@ -337,7 +351,7 @@ export default {
     li {
       display:inline-block;
       padding-left:15px;
-      @media (max-width: 768px) {      
+      @media (max-width: 1340px) {      
         display:block  !important;
         padding:0 !important;
       }            
@@ -345,7 +359,7 @@ export default {
         font-size:1.1rem;
         font-weight:600;
         color:$darkgrey;
-        @media (max-width: 768px) { 
+        @media (max-width: 1340px) { 
           display: block;
           padding: 0.2em 0;
           font-size: 2rem;
@@ -358,7 +372,7 @@ export default {
     }
   }
   &.open {
-    @media (max-width: 768px) {
+    @media (max-width: 1340px) {
       -webkit-transform: translateZ(0);
       transform: translateZ(0);       
       ul {
@@ -367,14 +381,14 @@ export default {
             animation: slide-in 0.4s 0.5s backwards;
           }
           &:nth-of-type(2) {
-            @media (max-width: 768px) {
+            @media (max-width: 1340px) {
               a {
                 animation-delay: 0.6s;
               }                
             }
           } 
           &:nth-of-type(3) {
-            @media (max-width: 768px) {
+            @media (max-width: 1340px) {
               a {
                 animation-delay: 0.7s;
               }  
