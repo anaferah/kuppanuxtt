@@ -3,17 +3,15 @@
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
     <!-- Slices block component -->
     <slices-block :slices="slices" />
-    <cta-footer />
     <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
     :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 
-    :copyright="copyright"/>
+    :copyright="copyright" :footerCtas="footerCtas" :designer="designer" :rotxt="rotxt"/>
   </div>
 </template>
 
 <script>
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
-import CtaFooter from "~/components/CtaFooter.vue";
 import FooterPrismic from "~/components/FooterPrismic.vue";
 
 export default {
@@ -21,7 +19,6 @@ export default {
   components: {
     HeaderPrismic,
     SlicesBlock,
-    CtaFooter,
     FooterPrismic
   },
   head() {
@@ -54,8 +51,10 @@ export default {
 
         // Menu
         menuLinks: menuContent.menu_links,
+        loginLinks: menuContent.login_links,
         companyLinks: footerContent.company_links,
         resourceLinks: footerContent.resource_links,
+        footerCtas: footerContent.footer_ctas,
         usefulLinks: footerContent.useful_links,
         headline: footerContent.headline,
         headline2: footerContent.headline2,
@@ -63,6 +62,8 @@ export default {
         description: footerContent.description,
         socialLinks: footerContent.social_links,
         copyright: footerContent.copyright,
+        designer: footerContent.designer,
+        rotxt: footerContent.rotxt,
         altLangs: result.alternate_languages
       };
     } catch (e) {

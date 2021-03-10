@@ -3,9 +3,6 @@
     <div class="main-img">
       <prismic-image :field="slice.primary.image" />
     </div>
-    <!-- <div class="background" :class="slice.primary.background_image_position">
-      <img src="./../../images/full-width-image-background.png" />
-    </div> -->
   </section>
 </template>
 

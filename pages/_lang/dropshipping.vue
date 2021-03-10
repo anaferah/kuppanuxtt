@@ -13,9 +13,6 @@
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import FooterPrismic from "~/components/FooterPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
 
 export default {
   name: "Dropshipping",

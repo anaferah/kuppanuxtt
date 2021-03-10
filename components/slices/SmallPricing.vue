@@ -65,10 +65,6 @@ export default {
                     text-decoration: underline;
                     color:white;
                     opacity:0.8;
-                    //  &:hover {
-                    //     color:$darkgrey;
-                    //     opacity: 1;
-                    // }
                 }
             }
             .dropshippingplans {

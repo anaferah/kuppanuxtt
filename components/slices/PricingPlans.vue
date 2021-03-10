@@ -1,19 +1,14 @@
 <template>
     <section class="pricing-columns pricing-section" id="pricing-plans">
             <div class="toggler-section">
-                <div class="toggler toggler--is-active" id="filt-monthly">
-                    
-                        <!-- <prismic-rich-text :field="slice.primary.monthlyp" /> -->
-                        <h3>{{ $prismic.asText(slice.primary.monthlyp) }} </h3>
-                    
+                <div class="toggler toggler--is-active" id="filt-monthly">                    
+                    <h3>{{ $prismic.asText(slice.primary.monthlyp) }} </h3>                    
                 </div>
                 <div class="toggle">
                     <input type="checkbox" id="switcher" class="check">
                     <b class="b switch"></b>
                 </div>
-                <div class="toggler" id="filt-hourly">
-                             
-                        <!-- <prismic-rich-text :field="slice.primary.anualp" /> -->
+                <div class="toggler" id="filt-hourly">                             
                    <h3>{{ $prismic.asText(slice.primary.anualp) }} </h3>
                 </div>  
             </div>      
@@ -360,9 +355,6 @@ export default {
                     margin:0;
                     margin-bottom:2rem;
                 }
-                &:first-child {
-                    
-                }
                 &:before {
                     content: '';
                     position: absolute;
@@ -477,12 +469,6 @@ export default {
             }
         }
     }
-}
-
-
-.pricing-columns #pricing-chart .popular a.sign-up,
-.pricing-columns-both #pricing-chart .popular a.sign-up {
-  
 }
 .pricing-columns #pricing-chart .popular .price .amount,
 .pricing-columns-both #pricing-chart .popular .price .amount {

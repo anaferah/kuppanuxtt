@@ -116,6 +116,7 @@ export default {
   h1 {
       font-size:4vw;
       font-weight:900;
+      margin-bottom:0;
       // color:white;
       &::first-letter {
           color:$darkgreen;

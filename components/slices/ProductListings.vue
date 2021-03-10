@@ -9,7 +9,6 @@
                 <div class="column is-2 is-6-mobile" v-for="item in slice.items" :key="item.id">
                     <prismic-link :field="item.link">
                         <prismic-image :field="item.image"/>
-                        <!-- <prismic-rich-text :field="item.label"/>         -->
                         <h4>{{ $prismic.asText(item.label) }}      </h4>    
                     </prismic-link>
                 </div>

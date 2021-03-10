@@ -7,7 +7,6 @@
                     <figure><prismic-image :field="item.image"/></figure>
                     <prismic-rich-text :field="item.heading"/>                    
                             <prismic-rich-text :field="item.label"/>
-                            <!-- {{ $prismic.asText(item.label) }} -->
                     </prismic-link>
                 </div>
             </div>

@@ -8,7 +8,6 @@
                     <prismic-rich-text :field="item.description" data-scroll data-scroll-speed="1.5"/>
                     <prismic-link :field="item.link" class="buttons button--hyperion" data-scroll data-scroll-speed="2.5">
                         <span><span>
-                            <!-- <prismic-rich-text :field="item.label"/> -->
                             {{ $prismic.asText(item.label) }}
                         </span></span>
                     </prismic-link>
@@ -48,26 +47,8 @@ export default {
                 color:$darkgrey;
                 margin: 1rem 0 4rem;
             }
-            // img {
-            //     height: 50px;
-            // }
             a {
                 text-decoration: none;
-                // p {
-                //     border: 2px solid $darkgrey;
-                //     padding: 7px 25px 5px;
-                //     color: $darkgrey;
-                //     font-weight: 600;
-                //     transition: 0.5s;
-                //     max-width: 45%;
-                //     margin:0 auto;
-                // }
-                // &:hover {
-                //     p {
-                //         background:$darkgrey;
-                //         color:white;
-                //     }
-                // }
             }
         }
     }    
@@ -92,15 +73,11 @@ export default {
         }
     }
 }
-
 .contact {
     .three-cols {
         .container {
             .columns {
                 a {
-                    &.buttons {
-                        
-                    }
                     &.button--hyperion {
                         background:$darkgrey;
                         border:none;

@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <!-- Vue tag to add header component -->
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs" :loginLinks="loginLinks"/>
-    <!-- Slices block component -->
     <slices-block :slices="slices" data-scroll-section/>
     <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
     :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 

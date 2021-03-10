@@ -12,17 +12,9 @@ export default function (doc) {
     return `/${doc.lang}`
   }
 
-  // if (doc.type === 'about') {
-  //   return `/${doc.lang}/about`
+  // if (doc.type === 'page') {
+  //   return `/${doc.lang}/${doc.uid}`
   // }
-
-  // if (doc.type === 'contact') {
-  //   return `/${doc.lang}/contact`
-  // }
-
-  if (doc.type === 'page') {
-    return `/${doc.lang}/${doc.uid}`
-  }
 
   if (doc.type === 'privacy') {
     return `/${doc.lang}/privacy`

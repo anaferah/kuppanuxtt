@@ -17,7 +17,6 @@
                                     {{ $prismic.asText(item.heading) }}
                                 </prismic-link>
                             </h4>
-                            <!-- <prismic-rich-text :field="item.heading"/> -->
                         </div>
                     </div>
                     <div class="img-wrapper">

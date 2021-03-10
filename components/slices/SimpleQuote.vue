@@ -27,6 +27,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin:3rem 0;
   @media (max-width: 768px) {
     margin:3rem 0;    
   }
@@ -68,6 +69,7 @@ export default {
     background-image: url(~assets/img/kuppabgp.jpg);
     background-position: bottom center;
     background-size: cover;
+    margin-bottom:7rem;
     @media (max-width: 768px) {
         background-position: center center;
       }

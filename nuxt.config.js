@@ -25,11 +25,6 @@ export default {
         href:
           "https://use.typekit.net/uzx2elw.css",
       },
-      // {
-      //   rel: "stylesheet",
-      //   href:
-      //     "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic",
-      // },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/icon?family=Material+Icons",
@@ -40,11 +35,6 @@ export default {
           "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css",
       },
     ],
-    // script: [
-    //   {
-    //     src: "@/assets/js/custom.js",
-    //   },
-    // ],
   },
 
   /*
@@ -61,7 +51,6 @@ export default {
   ],
   modules: [
     '@nuxtjs/style-resources',
-    '@nuxt-buefy',
     "nuxt-lazyimage",
     "@bazzite/nuxt-optimized-images"
   ],
@@ -70,23 +59,14 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    // {src: "~/plugins/custom.js",  mode: 'client', ssr: false},
-    {src: "~/plugins/locomotive.js", mode: "client", ssr: false },
-    // {src: "~/plugins/gsap.js", mode: "client", ssr: false },
-    // { src: '~/plugins/client.js', mode: 'client', ssr: false},
-    // { src: '~/plugins/both.js' },
-    // { src: '~/plugins/server.js', mode: 'server' },
     { src: "~/plugins/prismicLinks", ssr: false },
-    {src: "~/plugins/buefy.js", body: true, ssr: false},    
     {src: '~/plugins/imagesLoaded.js', ssr: false },
-    '~plugins/buefy.js',
-    // {src: "~/plugins/custom.js",  mode: 'client', ssr: false},
-
+    '@/plugins/gtag'
   ],
     /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/prismic", 'nuxt-gsap-module',
+  modules: ["@nuxtjs/prismic", 
    ['nuxt-i18n', {
     // ...
     detectBrowserLanguage: {
@@ -96,8 +76,7 @@ export default {
     }
   }]
   ],
-  buildModules: [
-    'nuxt-gsap-module',
+  buildModules: [    
     '@aceforth/nuxt-optimized-images',
     ['nuxt-i18n', {
       // ...
@@ -108,11 +87,7 @@ export default {
       }
     }]
   ],
-  i18n: {
-    // locales: ['en-gb', 'ro'],
-    // defaultLocale: 'en-gb',
-  },
-  optimizedImages: {
+   optimizedImages: {
     optimizeImages: true
   },
   prismic: {
@@ -133,16 +108,8 @@ export default {
       config.resolve.alias["vue"] = "vue/dist/vue.common";
     },
     transpile: [
-      'nuxt-gsap-module',
-      'gsap'
+      
     ],
-  },
-
-  gsap: {
-    extraPlugins: {
-      scrollTo: true,
-      scrollTrigger: true
-    },
   },
 
   generate: {

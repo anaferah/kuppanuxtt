@@ -16,28 +16,24 @@
     "@nuxtjs/prismic": "^1.2.3",
     "bulma": "^0.9.2",
     "cookies": "^0.8.0",
-    "gsap": "^3.6.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
     "imagemin-svgo": "^9.0.0",
     "imagesloaded": "^4.1.4",
-    "locomotive-scroll": "^4.1.0",
     "nuxt": "^2.14.6",
-    "nuxt-buefy": "^0.4.4",
     "nuxt-i18n": "^6.20.4",
     "nuxt-lazyimage": "^2.0.1",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^3.0.1",
     "slice-machine-ui": "0.0.43",
-    "vue-badger-accordion": "^2.0.2",
-    "vue-bulma-accordion": "^0.5.2"
+    "vue-gtag": "^1.11.0"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.4.0",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
-    "nuxt-gsap-module": "^1.2.0",
     "sass-loader": "^9.0.2"
   }
 }

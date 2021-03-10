@@ -8,24 +8,48 @@
       <!-- {{ $prismic.asText(instafollow) }} -->
 				<div class="tiles__wrap">
 					<div class="tiles__line" data-scroll data-scroll-speed="1" data-scroll-target="#grid3" data-scroll-direction="vertical">
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image1})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image2})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image3})`}"></div>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image1})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image2})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image3})`}"></div>
+						</a>
 					</div>
 					<div class="tiles__line" data-scroll data-scroll-speed="-1" data-scroll-target="#grid3" data-scroll-direction="vertical">
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image4})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image5})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image6})`}"></div>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image4})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image5})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image6})`}"></div>
+						</a>
 					</div>
 					<div class="tiles__line" data-scroll data-scroll-speed="1" data-scroll-target="#grid3" data-scroll-direction="vertical">
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image7})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image8})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image9})`}"></div>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image7})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image8})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image9})`}"></div>
+						</a>
 					</div>
 					<div class="tiles__line" data-scroll data-scroll-speed="-1" data-scroll-target="#grid3" data-scroll-direction="vertical">
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image10})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image11})`}"></div>
-						<div class="tiles__line-img" :style="{ backgroundImage: `url(${image12})`}"></div>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">	
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image10})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image11})`}"></div>
+						</a>
+						<a href="https://www.instagram.com/kuppashop/" target="blank">
+							<div class="tiles__line-img" :style="{ backgroundImage: `url(${image12})`}"></div>
+						</a>
 					</div>
 				</div>
 		</section>
