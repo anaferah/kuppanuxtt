@@ -23,10 +23,17 @@ export default {
   },
 
   transition: "intro",
-  head() {
+   head () {
     return {
-      title: "Kuppa Dropshipping App"
-    };
+      title: this.meta_title,
+      meta: [
+       {
+        hid: 'description',
+        name: 'description', 
+        content: this.meta_description 
+      },
+     ]
+    }
   },
    beforeMount () {
     const browserLang = (window.navigator ? (window.navigator.language 
@@ -60,6 +67,8 @@ export default {
       return {
         // Page content, set slices as variable
         slices: result.data.body,
+        meta_title: result.data.meta_title,
+        meta_description: result.data.meta_description,
 
         // Menu
         menuLinks: menuContent.menu_links,

@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs" :loginLinks="loginLinks"/>
-    <slices-block :slices="slices" data-scroll-section/>
+    <slices-block :slices="slices" />
     <footer-prismic :companyLinks="companyLinks" :headline="headline" :headline2="headline2" :headline3="headline3"
     :resourceLinks="resourceLinks" :usefulLinks="usefulLinks" :description="description" :socialLinks="socialLinks" 
     :copyright="copyright" :footerCtas="footerCtas" :designer="designer" :rotxt="rotxt"/>
@@ -13,7 +13,6 @@
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
 import FooterPrismic from "~/components/FooterPrismic.vue";
-
 export default {
   name: "About",
   components: {
@@ -22,10 +21,17 @@ export default {
     FooterPrismic
   },
   transition: "intro",
-  head() {
+  head () {
     return {
-      title: "Kuppa Dropshipping App"
-    };
+      title: this.meta_title,
+      meta: [
+       {
+        hid: 'description',
+        name: 'description', 
+        content: this.meta_description 
+      },
+     ]
+    }
   },
   
   async asyncData({ $prismic, params, error }) {
@@ -43,13 +49,14 @@ export default {
 
       // Query to get the home page content
       const result = await $prismic.api.getSingle('about', lang)
-
       const menuContent = (await $prismic.api.getSingle('top_menu', lang )).data
       const footerContent = (await $prismic.api.getSingle('footer', lang )).data
 
       return {
         // Page content, set slices as variable
         slices: result.data.body,
+        meta_title: result.data.meta_title,
+        meta_description: result.data.meta_description,
 
         // Menu
         menuLinks: menuContent.menu_links,

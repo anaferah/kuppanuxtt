@@ -86,6 +86,18 @@ export default {
     SlicesBlock,
     FooterPrismic
   },
+   head () {
+    return {
+      title: this.meta_title,
+      meta: [
+       {
+        hid: 'description',
+        name: 'description', 
+        content: this.meta_description 
+      },
+     ]
+    }
+  },
 
   transition: "intro",
   data() {
@@ -104,12 +116,6 @@ export default {
       image12: insta12Img,
     };
   },
-  head() {
-    return {
-      title: "Kuppa Dropshipping App"
-    };
-  },
-
   async asyncData({ $prismic, params, error }) {
     try {
       // Languages from API response
@@ -132,6 +138,8 @@ export default {
       return {
         // Page content, set slices as variable
         slices: result.data.body,
+		meta_title: result.data.meta_title,
+        meta_description: result.data.meta_description,
 
         // Menu
         menuLinks: menuContent.menu_links,
